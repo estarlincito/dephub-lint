@@ -1,3 +1,11 @@
-import { defineConfig as config } from 'eslint/config';
+import {
+  type Config,
+  type ConfigWithExtendsArray,
+  defineConfig as config,
+} from '@eslint/config-helpers';
 
-export const defineConfig = config.bind(config);
+export function defineConfig(...args: ConfigWithExtendsArray): Config[] {
+  return config(args);
+}
+
+export type { Config };

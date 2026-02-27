@@ -1,7 +1,7 @@
 {
   "name": "@dephub/lint",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A lightweight ESLint wrapper with custom configuration and dependency management.",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
@@ -16,7 +16,8 @@
     "clean": "rm -rf dist",
     "build": "vite build",
     "dev": "vite build -w",
-    "start": "node dist/cli.js"
+    "start": "node dist/cli.js",
+    "compile": "pnpm pack"
   },
   "keywords": [
     "lint",
@@ -56,25 +57,25 @@
     "access": "public"
   },
   "dependencies": {
-    "eslint": "^9.35.0",
-    "@dephub/cli": "^1.0.0",
-    "@dephub/package-install": "^1.0.1",
-    "@dephub/package-manager": "^1.0.0",
-    "@dephub/package-check": "^1.0.0",
-    "@dephub/cache": "^2.0.0",
-    "@dephub/ask": "^1.0.0",
-    "@dephub/spawn": "^1.0.0",
+    "@dephub/ask": "^1.0.1",
+    "@dephub/cache": "^2.0.1",
+    "@dephub/cli": "^1.0.1",
     "@dephub/logger": "^1.1.0",
-    "@dephub/spinner": "^1.0.0"
+    "@dephub/package-check": "^1.0.2",
+    "@dephub/package-install": "^1.0.2",
+    "@dephub/package-manager": "^1.0.2",
+    "@dephub/spawn": "^1.0.1",
+    "@dephub/spinner": "^1.0.1",
+    "@eslint/config-helpers": "^0.5.2",
+    "eslint": "^9.39.2"
   },
   "devDependencies": {
+    "@dephub/glob": "^1.0.1",
     "@dephub/lint-ts": "^1.0.0",
-    "@dephub/glob": "^1.0.0",
-    "@dephub/path": "^1.0.0",
-    "@types/node": "^24.3.1",
-    "typescript": "^5.9.2",
-    "eslint": "^9.37.0",
-    "vite": "^7.1.4",
+    "@dephub/path": "^1.0.1",
+    "@types/node": "^25.2.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
     "vite-plugin-dts": "^4.5.4"
   }
 }

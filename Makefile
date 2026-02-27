@@ -14,5 +14,7 @@ b:
 	$(PR) build
 d:
 	$(PR) dev
+p:
+	$(PR) pack
 s:
 	$(PR) start	$(ARGS)
