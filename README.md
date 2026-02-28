@@ -1,35 +1,28 @@
-# @dephub/lint 🧹
+# @dephub/copyright ©
 
-> A lightweight, ESM-only ESLint runner.
+> Tiny utility to generate dynamic copyright notice strings based on the build year.
 
-[![NPM version](https://img.shields.io/npm/v/@dephub/lint.svg?style=flat)](https://npmjs.org/package/@dephub/lint)
+[![NPM version](https://img.shields.io/npm/v/@dephub/copyright.svg?style=flat)](https://npmjs.org/package/@dephub/copyright)
 [![ESM-only](https://img.shields.io/badge/ESM-only-brightgreen?style=flat)](https://nodejs.org/)
 
 ---
 
 ## Features ✨
 
-- 🚀 Full ESLint CLI support
-- 🎛 ESM-friendly, works seamlessly with modern projects
-- 🔧 API available for programmatic config and linting
+- 📅 Automatically detects the current year
+- 🔁 Generates a single year or a year range
+- 🚫 Validates that the build year is not in the future
+- 🧩 Tiny, dependency-free utility
+- 🌳 Tree-shakeable ESM-only package
 
 ---
 
 ## Installation 📦
 
-```bash
-# npm
-npm install @dephub/lint
-
-# pnpm
-pnpm add @dephub/lint
-
-# yarn
-yarn add @dephub/lint
-
-# bun
-bun add @dephub/lint
-```
+- npm: `npm install @dephub/copyright`
+- pnpm: `pnpm add @dephub/copyright`
+- yarn: `yarn add @dephub/copyright`
+- bun: `bun add @dephub/copyright`
 
 ---
 
@@ -37,26 +30,23 @@ bun add @dephub/lint
 
 ### CLI 💻
 
-```bash
-# Run linting in the current project
-npx @dephub/lint
-# Or if installed globally
-lint
-```
-
-Supports all ESLint CLI commands and options. Automatically detects `lint.config.mjs` in your project root.
+Not available.
 
 ### API 🧩
 
 ```ts
-import { defineConfig } from '@dephub/lint';
+import { copyright } from '@dephub/copyright';
 
-export default defineConfig({
-  rules: {
-    semi: ['error', 'always'],
-    quotes: ['error', 'single'],
-  },
-});
+// If current year is 2026
+copyright(2020);
+// → "Copyright © 2020–2026"
+
+copyright(2026);
+// → "Copyright © 2026"
+
+// Throws if build year is in the future
+copyright(2030);
+// Error: buildYear (2030) cannot be greater than the current year (2026).
 ```
 
 ---

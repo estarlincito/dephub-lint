@@ -1,1 +1,1 @@
-export * from './core/config.js';
+export * from './core/copyright.js';

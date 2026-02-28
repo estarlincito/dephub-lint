@@ -1,38 +1,34 @@
 {
-  "name": "@dephub/lint",
+  "name": "@dephub/copyright",
   "type": "module",
-  "version": "1.0.3",
-  "description": "A lightweight ESLint wrapper with custom configuration and dependency management.",
+  "version": "1.0.0",
+  "description": "Tiny utility to generate dynamic copyright notice strings based on the build year.",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
-  "bin": {
-    "lint": "./dist/cli.js"
-  },
   "scripts": {
     "prepublishOnly": "pnpm clean && pnpm check-types && pnpm build && pnpm lint",
     "release": "pnpm publish",
     "check-types": "tsc --noEmit",
-    "lint": "node dist/cli.js . --max-warnings 0",
+    "lint": "lint . --max-warnings 0",
     "clean": "rm -rf dist",
     "build": "vite build",
     "dev": "vite build -w",
     "start": "node dist/cli.js",
-    "compile": "pnpm pack"
+    "pack": "pnpm pack"
   },
   "keywords": [
-    "lint",
-    "eslint",
-    "react",
-    "next",
-    "node",
-    "javascript",
+    "copyright",
+    "year",
+    "year-range",
+    "license",
+    "notice",
+    "utility",
     "typescript",
-    "wrapper",
-    "linter",
-    "code-quality",
-    "code-review",
-    "clean-code",
-    "static-analysis"
+    "javascript",
+    "esm",
+    "build-year",
+    "date",
+    "dephub"
   ],
   "author": {
     "name": "Estarlin R",
@@ -45,32 +41,20 @@
     "dist"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/estarlincito/dephub-lint#readme",
+  "homepage": "https://github.com/estarlincito/dephub-copyright#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/estarlincito/dephub-lint.git"
+    "url": "https://github.com/estarlincito/dephub-copyright.git"
   },
   "bugs": {
-    "url": "https://github.com/estarlincito/dephub-lint/issues"
+    "url": "https://github.com/estarlincito/dephub-copyright/issues"
   },
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "@dephub/ask": "^1.0.1",
-    "@dephub/cache": "^2.0.1",
-    "@dephub/cli": "^1.0.1",
-    "@dephub/logger": "^1.1.0",
-    "@dephub/package-check": "^1.0.2",
-    "@dephub/package-install": "^1.0.2",
-    "@dephub/package-manager": "^1.0.2",
-    "@dephub/spawn": "^1.0.1",
-    "@dephub/spinner": "^1.0.1",
-    "@eslint/config-helpers": "^0.5.2",
-    "eslint": "^9.39.2"
-  },
   "devDependencies": {
     "@dephub/glob": "^1.0.1",
+    "@dephub/lint": "^1.0.0",
     "@dephub/lint-ts": "^1.0.0",
     "@dephub/path": "^1.0.1",
     "@types/node": "^25.2.1",
